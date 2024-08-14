@@ -98,7 +98,6 @@ button:focus-visible {
 .user-chat-message-container {
   border: 1px solid black;
   border-radius: 10px;
-  background-color: #191926;
   margin: 5px;
   padding-left: 10px;
   padding-right: 10px;
@@ -106,8 +105,24 @@ button:focus-visible {
   word-wrap: normal;
 }
 
+.user-chat-message-container.sender {
+  background-color: green;
+}
+
+.user-chat-message-container.reciever {
+  background-color: #191926;
+}
+
 .send-chat-container {
   display: flex;
+  justify-content: center;
   margin: 5px;
   height: 10%;
+}
+
+.send-chat-container form{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
 }

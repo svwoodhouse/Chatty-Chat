@@ -1,10 +1,21 @@
 import { useState } from "react";
 
-const SendChat = () => {
+interface SendChatProps {
+    onSend: (chatText : string) => void
+}
+
+const SendChat = ({onSend}: SendChatProps) => {
     const [chatText, setChatText] = useState('');
+
+    const sendMessage = (e: React.FormEvent<HTMLFormElement> ) => {
+        e.preventDefault()
+        onSend(chatText)
+        setChatText("")
+    }
+
     return (
         <div className="send-chat-container">
-            <form>
+            <form onSubmit={(e) => sendMessage(e)}>
             <input
                 type="text"
                 value={chatText}
